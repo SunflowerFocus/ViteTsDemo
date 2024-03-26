@@ -5,13 +5,29 @@ import Tab1 from './components/Tab1.vue'
 import Tab2 from './components/Tab2.vue'
 import Tab3 from './components/Tab3.vue'
 import Total from './components/Total.vue'
-import {reactive, ref} from 'vue'
+import GridSortSearch from './components/GridSortSearch.vue'
+import {ref} from 'vue'
 
 const currentTab = ref<'Tab1' | 'Tab2' | 'Tab3'>('Tab1')
 
 const tabs = {Tab1, Tab2, Tab3}
 
 // const data = reactive
+
+const title = '页面加载于 ' + new Date().toLocaleString()
+
+const gridData = [
+  { name: 'Chuck Norris', power: Infinity },
+  { name: 'Bruce Lee', power: 9000 },
+  { name: 'Jackie Chan', power: 7000 },
+  { name: 'Jet Li', power: 8000 }
+]
+
+const gridColumns = [
+  'name', 'power'
+];
+
+const searchQuery = ref('Lee')
 
 </script>
 
@@ -45,6 +61,15 @@ const tabs = {Tab1, Tab2, Tab3}
     <Total :count = 10>这时一个计数器</Total>
   </div>
 
+  <div>
+    <span :title="title"  :class="{ active: true, 'text-danger': true }">
+      鼠标悬停几秒钟查看此处动态绑定的提示信息！
+    </span>
+  </div>
+
+  <div>
+    <GridSortSearch :data="gridData" :columns="gridColumns" :filter-key="searchQuery"></GridSortSearch>
+  </div>
 
 </template>
 
