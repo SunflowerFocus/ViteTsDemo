@@ -1,7 +1,6 @@
 <script lang="ts">
 import {computed, defineComponent, PropType, ref} from 'vue'
 import {capitalize} from "@vue/shared";
-import {string} from "fast-glob/out/utils";
 
 export default defineComponent({
   name: "GridSortSearch",
@@ -26,7 +25,6 @@ export default defineComponent({
 
     const sortKey = ref("")
     const sortOrders = ref(props.columns.reduce((value, key) => ((value[key] = 1), value), {} as {[key: string]: any}))
-
 
     const filteredData = computed(() => {
       let filterKey = props.filterKey
@@ -66,7 +64,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <table v-if="filteredData.length">
+  <table v-show="true" v-if="filteredData.length">
     <thead>
     <tr>
       <th v-for="key in columns" @click="sortBy(key)">
@@ -75,7 +73,7 @@ export default defineComponent({
     </tr>
     </thead>
     <tbody>
-    <tr v-for="entry in filteredData">
+    <tr v-if="filteredData.length" :key="index" v-for="(entry,index) in filteredData">
       <td v-for="key in columns">
         {{ entry[key] }}
       </td>

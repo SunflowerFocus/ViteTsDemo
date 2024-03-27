@@ -6,6 +6,7 @@ import Tab2 from './components/Tab2.vue'
 import Tab3 from './components/Tab3.vue'
 import Total from './components/Total.vue'
 import GridSortSearch from './components/GridSortSearch.vue'
+import TreeItem from './components/TreeItem.vue'
 import {ref} from 'vue'
 
 const currentTab = ref<'Tab1' | 'Tab2' | 'Tab3'>('Tab1')
@@ -27,7 +28,30 @@ const gridColumns = [
   'name', 'power'
 ];
 
-const searchQuery = ref('Lee')
+const searchQuery = ref('')
+
+const treeData = ref({
+  name: 'My Tree',
+  children: [
+    { name: 'hello' },
+    { name: 'world' },
+    {
+      name: 'child folder',
+      children: [
+        {
+          name: 'child folder',
+          children: [{ name: 'hello' }, { name: 'world' }]
+        },
+        { name: 'hello' },
+        { name: 'world' },
+        {
+          name: 'child folder',
+          children: [{ name: 'hello' }, { name: 'world' }]
+        }
+      ]
+    }
+  ]
+})
 
 </script>
 
@@ -68,7 +92,12 @@ const searchQuery = ref('Lee')
   </div>
 
   <div>
+    Search <input name="query" v-model="searchQuery">
     <GridSortSearch :data="gridData" :columns="gridColumns" :filter-key="searchQuery"></GridSortSearch>
+  </div>
+
+  <div :style="{textAlign: 'left'}">
+    <TreeItem :data="treeData"></TreeItem>
   </div>
 
 </template>
