@@ -10,9 +10,13 @@ const router: Router = createRouter({
 
 // const isAuthenticated: string|null = getToken()
 
-// router.beforeEach((to, _, next) => {
-//     if (to.name !== 'Login' && !isAuthenticated) next({ name: 'Login' })
-//     else next()
-// })
+router.beforeEach((to, from, next) => {
+    if (to.meta.title) {
+        document.title = to.meta.title
+    }
+    // if (to.name !== 'Login' && !isAuthenticated) next({ name: 'Login' })
+    // else next()
+    next()
+})
 
 export default router

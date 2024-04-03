@@ -14,8 +14,8 @@ const changeLocale = (lang: string) => {
     <button @click="changeLocale('zh-CN')">中文</button>
     <button @click="changeLocale('en-US')">英文</button>
   </div>
-  <div>{{ $t('menu.list') }}</div>
-  <div>{{ $t('menu.message') }}</div>
+  <div>{{ $t('base.charts.baiduMap') }}</div>
+  <div>{{ $t('base.charts.aMap') }}</div>
 
 </template>
 

@@ -1,5 +1,8 @@
 import {RouteRecordRaw} from "vue-router";
 
+import i18n from '@/locales';
+const { t } = i18n.global;
+
 const routes: RouteRecordRaw = {
     path: '/demo',
     name: 'Demo',
@@ -13,7 +16,7 @@ const routes: RouteRecordRaw = {
             name: 'index',
             component: () => import('@/views/index/index.vue'),
             meta: {
-                title: 'Index'
+                title: t('routes.demo.language.index'),
             },
         },
         {
@@ -21,7 +24,7 @@ const routes: RouteRecordRaw = {
             name: 'Language',
             component: () => import('@/views/demo/language/index.vue'),
             meta: {
-                title: 'Language'
+                title: t('routes.demo.language.title'),
             },
         }
     ]
