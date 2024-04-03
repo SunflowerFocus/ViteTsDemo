@@ -7,7 +7,7 @@ export default defineComponent({
 </script>
 
 <template>
-  dashboard
+  DashBoard
 </template>
 
 <style scoped>

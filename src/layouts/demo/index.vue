@@ -1,20 +1,16 @@
 <script setup lang="ts">
+import {RouteRecordRaw, useRouter} from 'vue-router';
+
+const router: RouteRecordRaw[] = useRouter().getRoutes().filter(route => route.meta && route.meta.title && route.path.includes('demo'));
 
 </script>
 
 <template>
   <div>
-    <router-link to="/demo/index">首页</router-link> |
-    <router-link to="/demo/language">翻译</router-link> |
-    <router-link to="/demo/svg">SVG</router-link> |
-    <router-link to="/demo/tree">树</router-link> |
-    <router-link to="/demo/hello">Hello</router-link> |
-    <router-link to="/demo/total">计数</router-link> |
-    <router-link to="/demo/tab">标签页</router-link> |
-    <router-link to="/demo/gridSort">表格排序</router-link> |
-    <router-link to="/demo/title">鼠标悬停</router-link> |
-    <router-link to="/demo/about">关于</router-link> |
-    <router-link to="/demo/dashboard">面板</router-link> |
+    <router-link v-for="(route, index) in router" :key="index" :to="route.path">
+      {{ route.meta.title }}
+      <span v-if="index !== router.length - 1">|</span>
+    </router-link>
   </div>
   <hr>
   <router-view name="default"></router-view>
