@@ -9,7 +9,7 @@ const router: RouteRecordRaw[] = useRouter().getRoutes().filter(route => route.m
   <div>
     <router-link v-for="(route, index) in router" :key="index" :to="route.path">
       {{ route.meta.title }}
-      <span v-if="index !== router.length - 1">|</span>
+      <span v-if="index !== router.length - 1"> | </span>
     </router-link>
   </div>
   <hr>
