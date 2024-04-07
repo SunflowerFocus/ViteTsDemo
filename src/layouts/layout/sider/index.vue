@@ -7,7 +7,6 @@ const siderStyle: CSSProperties = {
   backgroundColor: '#001529',
   minHeight: '100vh',
   height: '100vh',
-  marginBottom: '48px',
   overflow: 'auto',
 };
 
