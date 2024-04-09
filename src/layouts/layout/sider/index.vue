@@ -15,26 +15,22 @@ import { reactive } from 'vue';
 import items from './data'
 
 const state = reactive({
-  rootSubmenuKeys: ['sub1', 'sub2', 'sub4'],
-  openKeys: ['sub1'],
+  rootSubmenuKeys: [],
+  openKeys: [],
   selectedKeys: [],
 });
 
 </script>
 
 <template>
-  <a-layout-sider :style="siderStyle" collapsible >
+  <a-layout-sider :style="siderStyle" collapsible>
     <a-menu
         v-model:selectedKeys="state.selectedKeys"
         mode="inline"
         theme="dark"
         :open-keys="state.openKeys"
         :items="items"
+        style="height: 20px;"
     ></a-menu>
-
   </a-layout-sider>
 </template>
-
-<style>
-
-</style>
