@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from 'vue'
-import TreeItem from "@/components/TreeItem.vue";
+import TreeItem from "@/components/demo/TreeItem.vue";
 
 const treeData = ref({
   name: 'My Tree',

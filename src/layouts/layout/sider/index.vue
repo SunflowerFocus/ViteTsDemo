@@ -4,7 +4,7 @@ import {CSSProperties} from 'vue';
 const siderStyle: CSSProperties = {
   textAlign: 'center',
   color: '#fff',
-  backgroundColor: '#001529',
+  backgroundColor: '#fff',
   minHeight: '100vh',
   height: '100vh',
   overflow: 'auto',
@@ -23,11 +23,10 @@ const state = reactive({
 </script>
 
 <template>
-  <a-layout-sider :style="siderStyle" collapsible>
+  <a-layout-sider :style="siderStyle">
     <a-menu
         v-model:selectedKeys="state.selectedKeys"
         mode="inline"
-        theme="dark"
         :open-keys="state.openKeys"
         :items="items"
         style="height: 20px;"

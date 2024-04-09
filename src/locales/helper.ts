@@ -1,7 +1,7 @@
 import {set} from "lodash-es";
 
 export function genMessage(langs: Record<string, any>, prefix: string = 'lang'): Record<string, any>{
-    const object: Record = {};
+    const object: Record<string, object> = {};
 
     Object.entries(langs).forEach(([key, value]) => {
         let fileName = key

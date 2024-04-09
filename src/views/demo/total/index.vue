@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Total from "@/components/Total.vue";
+import Total from "@/components/demo/Total.vue";
 </script>
 
 <template>

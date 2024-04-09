@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from "vue";
-import GridSortSearch from "@/components/GridSortSearch.vue";
+import GridSortSearch from "@/components/demo/GridSortSearch.vue";
 
 const gridData = [
   { name: 'Chuck Norris', power: Infinity },

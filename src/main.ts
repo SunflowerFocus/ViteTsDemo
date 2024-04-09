@@ -10,8 +10,4 @@ import i18n from '@/locales';
 
 import router from './router'
 
-import Antd from 'ant-design-vue';
-import 'ant-design-vue/dist/reset.css';
-
-
-createApp(App).use(i18n).use(router).use(Antd).mount('#app')
+createApp(App).use(i18n).use(router).mount('#app')

@@ -1,6 +1,7 @@
 import {RouteRecordRaw} from "vue-router";
 
 import i18n from '@/locales';
+// @ts-ignore
 const { t } = i18n.global;
 
 const LAYOUT = () => import('@/layouts/demo/index.vue');
@@ -16,7 +17,7 @@ const routes: RouteRecordRaw = {
     children: [
         {
             path: 'index',
-            name: 'index',
+            name: t('routes.demo.index.title'),
             component: () => import('@/views/demo/index/index.vue'),
             meta: {
                 title: t('routes.demo.index.title'),
@@ -24,7 +25,7 @@ const routes: RouteRecordRaw = {
         },
         {
             path: 'language',
-            name: 'language',
+            name: t('routes.demo.language.title'),
             component: () => import('@/views/demo/language/index.vue'),
             meta: {
                 title: t('routes.demo.language.title'),
@@ -32,7 +33,7 @@ const routes: RouteRecordRaw = {
         },
         {
             path: 'svg',
-            name: 'svg',
+            name: t('routes.demo.svg.title'),
             component: () => import('@/views/demo/svg/index.vue'),
             meta: {
                 title: t('routes.demo.svg.title'),
@@ -40,7 +41,7 @@ const routes: RouteRecordRaw = {
         },
         {
             path: 'tree',
-            name: 'tree',
+            name: t('routes.demo.tree.title'),
             component: () => import('@/views/demo/tree/index.vue'),
             meta: {
                 title: t('routes.demo.tree.title'),
@@ -48,7 +49,7 @@ const routes: RouteRecordRaw = {
         },
         {
             path: 'hello',
-            name: 'hello',
+            name: t('routes.demo.hello.title'),
             component: () => import('@/views/demo/hello/index.vue'),
             meta: {
                 title: t('routes.demo.hello.title'),
@@ -56,7 +57,7 @@ const routes: RouteRecordRaw = {
         },
         {
             path: 'total',
-            name: 'total',
+            name: t('routes.demo.total.title'),
             component: () => import('@/views/demo/total/index.vue'),
             meta: {
                 title: t('routes.demo.total.title'),
@@ -64,7 +65,7 @@ const routes: RouteRecordRaw = {
         },
         {
             path: 'tab',
-            name: 'tab',
+            name: t('routes.demo.tab.title'),
             component: () => import('@/views/demo/tab/index.vue'),
             meta: {
                 title: t('routes.demo.tab.title'),
@@ -72,7 +73,7 @@ const routes: RouteRecordRaw = {
         },
         {
             path: 'gridSort',
-            name: 'gridSort',
+            name: t('routes.demo.gridSort.title'),
             component: () => import('@/views/demo/grid_sort/index.vue'),
             meta: {
                 title: t('routes.demo.gridSort.title'),
@@ -80,7 +81,7 @@ const routes: RouteRecordRaw = {
         },
         {
             path: 'title',
-            name: 'title',
+            name: t('routes.demo.title.title'),
             component: () => import('@/views/demo/title/index.vue'),
             meta: {
                 title: t('routes.demo.title.title'),
@@ -88,7 +89,7 @@ const routes: RouteRecordRaw = {
         },
         {
             path: 'about',
-            name: 'about',
+            name: t('routes.demo.about.title'),
             component: () => import('@/views/demo/about/index.vue'),
             meta: {
                 title: t('routes.demo.about.title'),
@@ -96,7 +97,7 @@ const routes: RouteRecordRaw = {
         },
         {
             path: 'dashboard',
-            name: 'dashboard',
+            name: t('routes.demo.dashboard.title'),
             component: () => import('@/views/demo/dashboard/index.vue'),
             meta: {
                 title: t('routes.demo.dashboard.title'),
